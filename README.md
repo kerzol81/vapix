@@ -1,2 +1,2 @@
 # vapix
-axis camera API
+python implementation of some Axis Camera API
