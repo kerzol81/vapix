@@ -2,7 +2,7 @@ import requests
 
 class Axis:
 
-    def __init__(self, ID, ip, username, password):
+    def __init__(self, id='default', ip='192.168.0.90', username='root', password='root'):
         self.id = ID
         self.ip = ip
         self.username = username
