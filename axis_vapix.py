@@ -46,7 +46,7 @@ class Axis:
             r = requests.get(self.base_url + '/admin/restart.cgi')
             print('[*] Restaring ' + self.ip)
             if r.status_code == 200:
-                print('[+] Axis camera has been restarted succesfully')
+                print('[+] Axis camera has been restarted successfully')
             elif r.status_code == 401:
                 self.user_or_password_error()
             else:
