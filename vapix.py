@@ -20,12 +20,12 @@ class Axis:
     def get_VAPIX_version(self):
         """Returns the version of Axis VAPIX API supported by the camera"""
         try:
-            print('Requestion VAPIX version...')
+            print('[*] Requestion VAPIX version...')
             r = requests.get(self.base_url + 'param.cgi?action=list&group=Properties.API.HTTP.Version')
             if r.status_code == 200:
                 r = str(r.content.decode('utf-8'))
                 vapix_version = r.split("=")[1]
-                print('VAPIX version: ' + vapix_version)
+                print('[+] VAPIX version: ' + vapix_version)
 
             elif r.status_code == 401:
                 self.user_or_password_error()
@@ -42,7 +42,7 @@ class Axis:
         """ Restarts the Axis camera """
         try:
             r = requests.get(self.base_url + '/admin/restart.cgi')
-            print('Restaring ' + self.ip)
+            print('[*] Restaring ' + self.ip)
             if r.status_code == 200:
                 print('[+] Axis camera has been restarted succesfully')
             elif r.status_code == 401:
