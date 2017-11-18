@@ -63,3 +63,5 @@ class Axis:
             img = Image.open(f)
             img.show()
 
+    def set_overlay_text(self, text='test'):
+        requests.get(self.base_url + 'param.cgi?action=update%20&Image.I0.Text.TextEnabled=yes&Image.I0.Text.String=' + text)
